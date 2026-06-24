@@ -766,9 +766,10 @@ function encodeWAV(s, rate) {
 
 /* Orb events */
 orbEl.addEventListener("mousedown", startRec);
-window.addEventListener("mouseup", stopRec);
+window.addEventListener("mouseup", e => { if (recording) stopRec(e); });
 orbEl.addEventListener("touchstart", startRec, { passive: false });
-window.addEventListener("touchend", stopRec, { passive: false });
+orbEl.addEventListener("touchend", stopRec, { passive: false });
+orbEl.addEventListener("touchcancel", stopRec, { passive: false });
 
 /* Init */
 txtEl.focus();
