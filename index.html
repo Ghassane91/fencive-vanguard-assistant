@@ -29,7 +29,6 @@ body {
   background: var(--bg);
   color: var(--text);
   height: 100dvh;
-  overflow: hidden;
 }
 .hidden { display: none !important; }
 button { font-family: inherit; cursor: pointer; border: none; outline: none; }
@@ -41,6 +40,7 @@ button { font-family: inherit; cursor: pointer; border: none; outline: none; }
   height: 100dvh;
   max-width: 860px;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 /* ── Header ── */
@@ -522,7 +522,6 @@ document.getElementById("resetBtn").addEventListener("click", () => {
     }
   });
   toast("Conversation réinitialisée");
-  txtEl.focus();
 });
 
 /* Form submit */
@@ -559,7 +558,6 @@ bar.addEventListener("submit", async e => {
     addBubble("Erreur de connexion. Vérifiez que le bot est bien démarré.", "bot");
   } finally {
     sendEl.disabled = false;
-    txtEl.focus();
   }
 });
 
@@ -772,7 +770,7 @@ orbEl.addEventListener("touchend", stopRec, { passive: false });
 orbEl.addEventListener("touchcancel", stopRec, { passive: false });
 
 /* Init */
-txtEl.focus();
+
 </script>
 </body>
 </html>
