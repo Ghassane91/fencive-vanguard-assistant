@@ -58,7 +58,7 @@ header {
   z-index: 10;
 }
 .brand { display: flex; align-items: center; gap: 10px; }
-.brand img { height: 24px; filter: brightness(0) invert(1); opacity: .9; }
+.brand img { height: 24px; filter: none; opacity: .9; }
 .brand .label {
   font-size: 11px;
   letter-spacing: 2.5px;
@@ -121,7 +121,7 @@ header {
   align-items: center;
   gap: 14px;
 }
-.welcome img { height: 40px; filter: brightness(0) invert(1); opacity: .8; }
+.welcome img { height: 40px; filter: none; opacity: .8; }
 .welcome p { line-height: 1.6; }
 .suggestions {
   display: flex;
@@ -146,7 +146,7 @@ header {
 /* Bubbles */
 .row { display: flex; align-items: flex-end; gap: 8px; }
 .row.user { justify-content: flex-end; }
-.avatar { width: 26px; height: 26px; border-radius: 50%; object-fit: contain; padding: 3px; background: var(--surface2); border: 1px solid var(--border); flex-shrink: 0; margin-bottom: 2px; filter: brightness(0) invert(1); opacity: .8; }
+.avatar { width: 26px; height: 26px; border-radius: 50%; object-fit: contain; padding: 3px; background: var(--surface2); border: 1px solid var(--border); flex-shrink: 0; margin-bottom: 2px; filter: none; opacity: .8; }
 .bubble {
   padding: 11px 15px;
   border-radius: var(--radius);
@@ -337,6 +337,14 @@ header {
   pointer-events: none; z-index: 100; white-space: nowrap;
 }
 #toast.show { opacity: 1; }
+:root{
+  --bg:#ffffff; --surface:#ffffff; --surface2:#f6f6f6;
+  --border:rgba(0,0,0,0.08);
+  --text:rgba(0,0,0,0.81); --heading:#000000;
+  --muted:rgba(0,0,0,0.5); --muted2:rgba(0,0,0,0.35);
+  --primary:#000000; --primary-hover:#333333; --primary-text:#ffffff;
+  --font:'Inter',system-ui,sans-serif;
+}
 </style>
 </head>
 <body>
@@ -745,3 +753,4 @@ orbEl.addEventListener("touchcancel", stopRec, { passive: false });
 </script>
 </body>
 </html>
+
