@@ -690,9 +690,9 @@ function stopRec(ev) {
 
 async function processRec() {
   try {
-    const blob = new Blob(chunks, { type: (chunks[0] && chunks[0].type) || "audio/webm" });
+    const blob = new Blob(chunks, { type: (chunks[0]?.type) || "audio/webm" });
     setStatus("Envoi…");
-    const res = await fetch(VOICE, { method: "POST", headers: { "Content-Type": blob.type }, body: blob });
+    const res = await fetch(VOICE, { method: "POST", headers: { "Content-Type": blob.type || "audio/webm" }, body: blob });
     const data = await res.json();
     if (data.transcription) {
       addBubble(data.transcription, "user", true);
